@@ -1,4 +1,4 @@
-# Trusted Siging Notation Plugin
+# Trusted Signing Notation Plugin
 
 This Notation plugin allows you to use Microsoft's **Trusted Signing** service to sign and verify container images and other OCI artifacts. Signatures enable users to verify that these artifacts are from a trusted source and have not been tampered with since their release.
 
