@@ -1,0 +1,46 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33403.182
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Azure.Developer.TrustedSigning.NotationPlugin", "Azure.Developer.TrustedSigning.NotationPlugin\Azure.Developer.TrustedSigning.NotationPlugin.csproj", "{1F6B9DCA-AB11-4372-B17C-BCCE55E75DE7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Azure.Developer.TrustedSigning.NotationPlugin.UnitTests", "Azure.Developer.TrustedSigning.NotationPlugin.UnitTests\Azure.Developer.TrustedSigning.NotationPlugin.UnitTests.csproj", "{BBBD0ABE-4D1A-428D-B55F-1ADEA26BD4A6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{2DBFD68C-9378-449B-9F21-CDD4DFCFAEA9}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+		.gitignore = .gitignore
+		CODE_OF_CONDUCT.md = CODE_OF_CONDUCT.md
+		CONTRIBUTING.md = CONTRIBUTING.md
+		NuGet.config = NuGet.config
+		LICENSE.txt = LICENSE.txt
+		.pipelines\OneBranch.Official.yml = .pipelines\OneBranch.Official.yml
+		.pipelines\OneBranch.PullRequest.yml = .pipelines\OneBranch.PullRequest.yml
+		owners.txt = owners.txt
+		README.md = README.md
+		SECURITY.md = SECURITY.md
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1F6B9DCA-AB11-4372-B17C-BCCE55E75DE7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F6B9DCA-AB11-4372-B17C-BCCE55E75DE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F6B9DCA-AB11-4372-B17C-BCCE55E75DE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F6B9DCA-AB11-4372-B17C-BCCE55E75DE7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BBBD0ABE-4D1A-428D-B55F-1ADEA26BD4A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BBBD0ABE-4D1A-428D-B55F-1ADEA26BD4A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BBBD0ABE-4D1A-428D-B55F-1ADEA26BD4A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BBBD0ABE-4D1A-428D-B55F-1ADEA26BD4A6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {36FB75CF-5307-4B68-A853-86DC66E4DA92}
+	EndGlobalSection
+EndGlobal
