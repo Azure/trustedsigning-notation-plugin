@@ -121,9 +121,10 @@ internal static class Validator
             return false;
         }
 
-        if (PluginConstants.SupportedKeySpec != keySpec)
+        if (keySpec != PluginConstants.SupportedKeySpec)
         {
-            errorMessage = "Request from notation contains invalid or unsupported keySpec: " + keySpec;
+            errorMessage = @$"Request from notation contains invalid or unsupported keySpec: {keySpec}.
+                            Expected keys are {PluginConstants.SupportedKeySpec}";
             return false;
         }
 
@@ -143,7 +144,8 @@ internal static class Validator
         // Currently TrustedSigning only supports RSA-3072 keys, which uses SHA-384 hashing.
         if (hashAlgorithm.Trim() != PluginConstants.SupportedHashAlgo)
         {
-            errorMessage = "Request from notation contains invalid or unsupported hashAlgorithm: " + hashAlgorithm;
+            errorMessage = @$"Request from notation contains invalid or unsupported hashAlgorithm: {hashAlgorithm}.
+                              Supported algorithms are {PluginConstants.SupportedHashAlgo}" ;
             return false;
         }
 

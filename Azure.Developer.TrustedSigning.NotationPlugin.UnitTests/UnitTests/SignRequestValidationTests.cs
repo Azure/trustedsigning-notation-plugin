@@ -128,7 +128,7 @@ public class SignRequestValidationTests : TestBase
 
         // Assert
         Assert.False(result);
-        Assert.Equal(expectedError, errorMessage);
+        Assert.Contains(expectedError, errorMessage);
     }
 
     [Fact]
@@ -161,7 +161,7 @@ public class SignRequestValidationTests : TestBase
 
         // Assert
         Assert.False(result);
-        Assert.Equal(expectedError, errorMessage);
+        Assert.Contains(expectedError, errorMessage);
     }
 
     [Fact]
