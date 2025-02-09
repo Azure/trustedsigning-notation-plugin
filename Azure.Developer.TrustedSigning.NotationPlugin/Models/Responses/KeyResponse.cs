@@ -8,6 +8,6 @@ namespace Azure.Developer.TrustedSigning.NotationPlugin.Models;
 /// </summary>
 internal class KeyResponse : BaseResponse
 {
-    public string? KeyId { get; set; }
-    public string? KeySpec { get; set; }
+    public string KeyId { get; set; } = string.Empty;
+    public string KeySpec { get; set; } = string.Empty;
 }
