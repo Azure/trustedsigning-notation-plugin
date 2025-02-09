@@ -44,7 +44,7 @@ internal static class Sign
 
         // Create digest from the request payload
         byte[] decodedPayload = Convert.FromBase64String(request.Payload!);
-        byte[]? digest = hasher.ComputeHash(decodedPayload);
+        byte[] digest = hasher.ComputeHash(decodedPayload);
 
         // Submit digest for signing with TrustedSigning
         // Notation only supports PSS padding https://github.com/notaryproject/notaryproject/blob/main/specs/plugin-extensibility.md#generate-signature
