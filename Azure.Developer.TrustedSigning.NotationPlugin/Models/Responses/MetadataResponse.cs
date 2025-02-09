@@ -8,10 +8,10 @@ namespace Azure.Developer.TrustedSigning.NotationPlugin.Models;
 /// </summary>
 internal class MetadataResponse : BaseResponse
 {
-    public string Name { get; set; } = string.Empty;
-    public string Description { get; set; } = string.Empty;
-    public string Version { get; set; } = string.Empty;
-    public string Url { get; set; } = string.Empty;
-    public string[] SupportedContractVersions { get; set; } = [];
-    public string[] Capabilities { get; set; } = [];
+    public required string Name { get; set; }
+    public required string Description { get; set; }
+    public required string Version { get; set; }
+    public required string Url { get; set; }
+    public required string[] SupportedContractVersions { get; set; }
+    public required string[] Capabilities { get; set; }
 }

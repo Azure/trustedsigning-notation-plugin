@@ -8,8 +8,8 @@ namespace Azure.Developer.TrustedSigning.NotationPlugin.Models;
 /// </summary>
 internal class SignatureResponse : BaseResponse
 {
-    public string KeyId { get; set; } = string.Empty;
-    public string Signature { get; set; } = string.Empty;
-    public string SigningAlgorithm { get; set; } = string.Empty;
-    public string[] CertificateChain { get; set; } = [];
+    public required string KeyId { get; set; }
+    public required string Signature { get; set; }
+    public required string SigningAlgorithm { get; set; }
+    public required string[] CertificateChain { get; set; }
 }
