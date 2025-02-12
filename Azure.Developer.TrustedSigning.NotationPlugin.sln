@@ -12,12 +12,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		.editorconfig = .editorconfig
 		.gitignore = .gitignore
 		CODE_OF_CONDUCT.md = CODE_OF_CONDUCT.md
-		CONTRIBUTING.md = CONTRIBUTING.md
-		NuGet.config = NuGet.config
-		LICENSE.txt = LICENSE.txt
-		.pipelines\OneBranch.Official.yml = .pipelines\OneBranch.Official.yml
-		.pipelines\OneBranch.PullRequest.yml = .pipelines\OneBranch.PullRequest.yml
-		owners.txt = owners.txt
+		LICENSE = LICENSE
 		README.md = README.md
 		SECURITY.md = SECURITY.md
 	EndProjectSection
