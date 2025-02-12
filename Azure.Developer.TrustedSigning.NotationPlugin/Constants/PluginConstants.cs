@@ -18,7 +18,7 @@ internal static class PluginConstants
     internal const string VersionDelimiter = "::";
 
     // Plugin metadata
-    public const string Name = "TrustedSigning";
+    public const string Name = "azure-trustedsigning";
 
     public const string Description = "Sign OCI artifacts using the Trusted Signing Service";
     public static readonly string ClientVersionString = GetClientVersionString();
