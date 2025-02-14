@@ -1,0 +1,19 @@
+{
+  "profiles": {
+    "Azure.Developer.TrustedSigning.NotationPlugin": {
+      "commandName": "Project"
+    },
+    "Metadata": {
+      "commandName": "Project",
+      "commandLineArgs": "get-plugin-metadata"
+    },
+    "Key": {
+      "commandName": "Project",
+      "commandLineArgs": "describe-key"
+    },
+    "Signature": {
+      "commandName": "Project",
+      "commandLineArgs": "generate-signature"
+    }
+  }
+}
