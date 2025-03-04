@@ -42,7 +42,7 @@ jobs:
           path: ./bin/artifacts/notation-azure-trustedsigning_0.0.1_linux_amd64.tar.gz
           retention-days: 1
   test-macos:
-    name: Unit Testing and Build on MacOS x64 & arm64
+    name: Unit Testing and Build on macOS x64 & arm64
     runs-on: ubuntu-24.04
     timeout-minutes: 5
     permissions:
@@ -69,7 +69,7 @@ jobs:
           retention-days: 1
       - name: Build macOS arm Binary
         run: |
-          python3 ./scripts/build.py v0.0.1 osx-x64
+          python3 ./scripts/build.py v0.0.1 osx-arm64
       - name: Upload macOS arm artifact
         uses: actions/upload-artifact@v4
         with:
