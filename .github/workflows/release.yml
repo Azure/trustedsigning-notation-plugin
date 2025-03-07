@@ -1,0 +1,66 @@
+---
+name: Release notation-azure-trustedsigning plugin
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+# Contents write required for release PRs
+permissions:
+  contents: write
+
+jobs:
+  build:
+    strategy:
+      matrix:
+        config:
+          - runtime: osx-x64
+            build_args: ""
+            os: ubuntu-24.04
+          - runtime: osx-arm64
+            build_args: ""
+            os: ubuntu-24.04
+          - runtime: linux-x64
+            build_args: ""
+            os: ubuntu-24.04
+          - runtime: win-x64
+            build_args: ""
+            os: windows-2022
+    name: Build
+    runs-on: ${{ matrix.config.os }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+      - name: Build .NET project
+        shell: bash
+        run: python3 ./scripts/build.py "${GITHUB_REF_NAME}" ${{ matrix.config.runtime }} ${{ matrix.config.build_args }}
+      - name: Upload ${{ matrix.config.runtime }} artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ matrix.config.runtime }}
+          path: ${{ github.workspace }}/bin/artifacts/*
+          retention-days: 1
+    release:
+        name: Release
+        runs-on: ubuntu-24.04
+        needs: Build
+        steps:
+          - name: Checkout
+            uses: actions/checkout@v4
+            with:
+              fetch-depth: 0
+          - name: Download artifacts
+            uses: actions/download-artifact@v4
+            with:
+              path: ${{ github.workspace }}/bin/artifacts
+          - name: Create release
+            env:
+              GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+            run: bash ./scripts/release.sh "${GITHUB_REF_NAME}"

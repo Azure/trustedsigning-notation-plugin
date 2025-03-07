@@ -1,0 +1,104 @@
+---
+# Github workflow for Trusted Signing Notation plugin
+name: Build & Test
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+permissions:
+  id-token: write # Require write permission to Fetch an OIDC token.
+  contents: read
+
+jobs:
+  test-linux:
+    name: Unit Testing and Build on Linux x64
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    permissions:
+      contents: read
+    steps:
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+      - name: Checkout code into the project directory
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Run unit tests
+        run: make test
+      - name: Build Linux Binary
+        run: |
+          python3 ./scripts/build.py v0.0.1 linux-x64
+      - name: Upload Linux artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: linux-amd64-binary
+          path: ./bin/artifacts/notation-azure-trustedsigning_0.0.1_linux_amd64.tar.gz
+          retention-days: 1
+  test-macos:
+    name: Unit Testing and Build on macOS x64 & arm64
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    permissions:
+      contents: read
+    steps:
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+      - name: Checkout code into the project directory
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Run unit tests
+        run: make test
+      - name: Build macOS Binary
+        run: |
+          python3 ./scripts/build.py v0.0.1 osx-x64
+      - name: Upload macOS artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: darwin-amd64-binary
+          path: ./bin/artifacts/notation-azure-trustedsigning_0.0.1_darwin_amd64.tar.gz
+          retention-days: 1
+      - name: Build macOS arm Binary
+        run: |
+          python3 ./scripts/build.py v0.0.1 osx-arm64
+      - name: Upload macOS arm artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: darwin-amd64-binary
+          path: ./bin/artifacts/notation-azure-trustedsigning_0.0.1_darwin_arm64.tar.gz
+          retention-days: 1
+  test-windows:
+    name: Unit Testing and Build on Windows x64
+    runs-on: windows-2022
+    timeout-minutes: 5
+    permissions:
+      contents: read
+    steps:
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+      - name: Check out code into the project directory
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Run unit tests
+        run: make test
+      - name: Build Windows Binary
+        run: python3 ./scripts/build.py v0.0.1 win-x64
+      - name: Upload Windows artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: windows-amd64-binary
+          path: ./bin/artifacts/notation-azure-trustedsigning_0.0.1_windows_amd64.zip
+          retention-days: 1
+# TODO: Find a day to do E2E test using a trusted signing account
