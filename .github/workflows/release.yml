@@ -47,20 +47,20 @@ jobs:
           name: ${{ matrix.config.runtime }}
           path: ${{ github.workspace }}/bin/artifacts/*
           retention-days: 1
-    release:
-        name: Release
-        runs-on: ubuntu-24.04
-        needs: Build
-        steps:
-          - name: Checkout
-            uses: actions/checkout@v4
-            with:
-              fetch-depth: 0
-          - name: Download artifacts
-            uses: actions/download-artifact@v4
-            with:
-              path: ${{ github.workspace }}/bin/artifacts
-          - name: Create release
-            env:
-              GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-            run: bash ./scripts/release.sh "${GITHUB_REF_NAME}"
+  release:
+      name: Release
+      runs-on: ubuntu-24.04
+      needs: Build
+      steps:
+        - name: Checkout
+          uses: actions/checkout@v4
+          with:
+            fetch-depth: 0
+        - name: Download artifacts
+          uses: actions/download-artifact@v4
+          with:
+            path: ${{ github.workspace }}/bin/artifacts
+        - name: Create release
+          env:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          run: bash ./scripts/release.sh "${GITHUB_REF_NAME}"
