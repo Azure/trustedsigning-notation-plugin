@@ -73,7 +73,7 @@ jobs:
       - name: Upload macOS arm artifact
         uses: actions/upload-artifact@v4
         with:
-          name: darwin-amd64-binary
+          name: darwin-arm64-binary
           path: ./bin/artifacts/notation-azure-trustedsigning_0.0.1_darwin_arm64.tar.gz
           retention-days: 1
   test-windows:
