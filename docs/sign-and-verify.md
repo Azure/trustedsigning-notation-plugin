@@ -48,11 +48,19 @@ notation key add "<<keyname>>" --plugin azure-trustedsigning --plugin-config acc
    ```sh
    notation sign $server/hello-world:v1 --key "<<keyname>>"
    ```
+6. A message indicating `Successfully signed $server/hello-world:v1@sha256:...` is displayed.
 
-## Verify an artifact
 
-To verify the signature of an artifact, run the following command:
+## Verify the signature
+
+To verify the successful signature of an artifact, run the following command:
 
 ```sh
-notation verify $server/hello-world:v1
+notation ls $server/hello-world:v1
+```
+
+To view more details about the signature, run the following command:
+
+```sh
+notation inspect $server/hello-world:v1
 ```
