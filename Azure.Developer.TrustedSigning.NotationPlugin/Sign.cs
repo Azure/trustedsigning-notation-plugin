@@ -54,7 +54,7 @@ internal static class Sign
     }
 
     // Returns a base64-encoded list of X509 certificates, ordered leaf -> root
-    internal static string[] FormatCertChain(ISignContext context) => context.GetCertChain()
-            .Select(cert => Convert.ToBase64String(cert.Export(X509ContentType.Cert)))
-            .ToArray();
+    internal static string[] FormatCertChain(ISignContext context) =>
+        [.. context.GetCertChain().Select(cert => Convert.ToBase64String(cert.Export(X509ContentType.Cert)))
+    ];
 }

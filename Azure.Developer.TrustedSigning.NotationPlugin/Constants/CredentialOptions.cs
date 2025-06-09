@@ -11,7 +11,6 @@ internal static class CredentialOptions
     public const string ManagedIdentity = "ManagedIdentityCredential";
     public const string SharedTokenCache = "SharedTokenCacheCredential";
     public const string VisualStudio = "VisualStudioCredential";
-    public const string VisualStudioCode = "VisualStudioCodeCredential";
     public const string AzureCli = "AzureCliCredential";
     public const string AzurePowershell = "AzurePowerShellCredential";
     public const string InteractiveBrowser = "InteractiveBrowserCredential";
@@ -23,7 +22,6 @@ internal static class CredentialOptions
         ManagedIdentity,
         SharedTokenCache,
         VisualStudio,
-        VisualStudioCode,
         AzureCli,
         AzurePowershell,
         InteractiveBrowser,

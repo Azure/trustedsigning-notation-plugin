@@ -40,7 +40,7 @@ internal class SignatureRequest : BaseRequest
 
     private static DefaultAzureCredential GetAzureCredential(string? excludeCredentials)
     {
-        if (String.IsNullOrWhiteSpace(excludeCredentials))
+        if (string.IsNullOrWhiteSpace(excludeCredentials))
         {
             return new DefaultAzureCredential();
         }
@@ -62,7 +62,6 @@ internal class SignatureRequest : BaseRequest
             ExcludeManagedIdentityCredential = providedCredentials.Contains(CredentialOptions.ManagedIdentity, stringComparer),
             ExcludeSharedTokenCacheCredential = providedCredentials.Contains(CredentialOptions.SharedTokenCache, stringComparer),
             ExcludeVisualStudioCredential = providedCredentials.Contains(CredentialOptions.VisualStudio, stringComparer),
-            ExcludeVisualStudioCodeCredential = providedCredentials.Contains(CredentialOptions.VisualStudioCode, stringComparer),
             ExcludeAzureCliCredential = providedCredentials.Contains(CredentialOptions.AzureCli, stringComparer),
             ExcludeAzurePowerShellCredential = providedCredentials.Contains(CredentialOptions.AzurePowershell, stringComparer),
             ExcludeInteractiveBrowserCredential = providedCredentials.Contains(CredentialOptions.InteractiveBrowser, stringComparer),
