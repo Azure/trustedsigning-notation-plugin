@@ -9,7 +9,7 @@
 
   <ItemGroup>
     <PackageReference Include="Azure.Developer.TrustedSigning.CryptoProvider" Version="0.1.60" />
-    <PackageReference Include="Azure.Identity" Version="1.14.2" />
+    <PackageReference Include="Azure.Identity" Version="1.15.0" />
   </ItemGroup>
 
   <ItemGroup>
