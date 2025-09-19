@@ -60,9 +60,9 @@ internal class SignatureRequest : BaseRequest
         {
             ExcludeEnvironmentCredential = providedCredentials.Contains(CredentialOptions.Environment, stringComparer),
             ExcludeManagedIdentityCredential = providedCredentials.Contains(CredentialOptions.ManagedIdentity, stringComparer),
-#pragma warning disable CS0618 // Shared token credentials has been deprecated on Azure.Identity 1.15.0
+#pragma warning disable CS0618 // Shared token credential has been deprecated on Azure.Identity 1.15.0
             ExcludeSharedTokenCacheCredential = providedCredentials.Contains(CredentialOptions.SharedTokenCache, stringComparer),
-#pragma warning restore CS0618 // Shared token credentials has been deprecated on Azure.Identity 1.15.0
+#pragma warning restore CS0618 // Shared token credential has been deprecated on Azure.Identity 1.15.0
             ExcludeVisualStudioCredential = providedCredentials.Contains(CredentialOptions.VisualStudio, stringComparer),
             ExcludeAzureCliCredential = providedCredentials.Contains(CredentialOptions.AzureCli, stringComparer),
             ExcludeAzurePowerShellCredential = providedCredentials.Contains(CredentialOptions.AzurePowershell, stringComparer),
