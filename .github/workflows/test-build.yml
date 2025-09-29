@@ -41,6 +41,32 @@ jobs:
           name: linux-amd64-binary
           path: ./bin/artifacts/notation-azure-trustedsigning_0.0.1_linux_amd64.tar.gz
           retention-days: 1
+  test-linux-arm:
+    name: Unit Testing and Build on Linux ARM64
+    runs-on: ubuntu-24.04-arm
+    timeout-minutes: 5
+    permissions:
+      contents: read
+    steps:
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+      - name: Checkout code into the project directory
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Run unit tests
+        run: make test
+      - name: Build Linux Binary
+        run: |
+          python3 ./scripts/build.py v0.0.1 linux-arm64
+      - name: Upload Linux artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: linux-arm64-binary
+          path: ./bin/artifacts/notation-azure-trustedsigning_0.0.1_linux_arm64.tar.gz
+          retention-days: 1
   test-macos:
     name: Unit Testing and Build on macOS x64 & arm64
     runs-on: ubuntu-24.04
