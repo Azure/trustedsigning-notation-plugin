@@ -102,15 +102,37 @@ jobs:
           name: darwin-arm64-binary
           path: ./bin/artifacts/notation-azure-trustedsigning_0.0.1_darwin_arm64.tar.gz
           retention-days: 1
-  test-windows:
-    name: Unit Testing and Build on Windows x64
-    runs-on: ${{ matrix.os }}
+  test-windows-2022:
+    name: Unit Testing and Build on Windows (2022) x64
+    runs-on: windows-2022
     timeout-minutes: 5
     permissions:
       contents: read
-    strategy:
-      matrix:
-        os: [windows-2022, windows-2025]
+    steps:
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+      - name: Check out code into the project directory
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Run unit tests
+        run: make test
+      - name: Build Windows Binary
+        run: python3 ./scripts/build.py v0.0.1 win-x64
+      - name: Upload Windows artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: windows-amd64-binary
+          path: ./bin/artifacts/notation-azure-trustedsigning_0.0.1_windows_amd64.zip
+          retention-days: 1
+  test-windows-2025:
+    name: Unit Testing and Build on Windows (2025) x64
+    runs-on: windows-2025
+    timeout-minutes: 5
+    permissions:
+      contents: read
     steps:
       - name: Setup .NET
         uses: actions/setup-dotnet@v4
