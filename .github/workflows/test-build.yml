@@ -104,10 +104,13 @@ jobs:
           retention-days: 1
   test-windows:
     name: Unit Testing and Build on Windows x64
-    runs-on: windows-2022
+    runs-on: ${{ matrix.os }}
     timeout-minutes: 5
     permissions:
       contents: read
+    strategy:
+      matrix:
+        os: [windows-2022, windows-2025]
     steps:
       - name: Setup .NET
         uses: actions/setup-dotnet@v4
