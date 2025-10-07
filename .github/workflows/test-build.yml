@@ -125,7 +125,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: windows-amd64-binary
-          path: ./bin/artifacts/notation-azure-trustedsigning_0.0.1_windows_amd64.zip
+          path: ./bin/artifacts/notation-azure-trustedsigning_0.0.1_windows_2022_amd64.zip
           retention-days: 1
   test-windows-2025:
     name: Unit Testing and Build on Windows (2025) x64
@@ -150,6 +150,6 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: windows-amd64-binary
-          path: ./bin/artifacts/notation-azure-trustedsigning_0.0.1_windows_amd64.zip
+          path: ./bin/artifacts/notation-azure-trustedsigning_0.0.1_windows_2025_amd64.zip
           retention-days: 1
 # TODO: Find a day to do E2E test using a trusted signing account
