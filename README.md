@@ -18,32 +18,32 @@ Please refer to [MS Learn Trusted Signing Documentation](https://learn.microsoft
    For Linux amd64:
 
    ```
-   notation plugin install --url https://github.com/Azure/trustedsigning-notation-plugin/releases/download/v0.2.0-alpha.1/notation-azure-trustedsigning_0.2.0-alpha.1_linux_amd64.tar.gz --sha256sum ce52f63659f41115cebced1e479a1c6c920c388d7699e4bdd5426657e339f59e
+   notation plugin install --url https://github.com/Azure/trustedsigning-notation-plugin/releases/download/v1.0.0-beta.1/notation-azure-trustedsigning_1.0.0-beta.1_linux_amd64.tar.gz --sha256sum ce52f63659f41115cebced1e479a1c6c920c388d7699e4bdd5426657e339f59e
    ```
 
    For Windows amd64:
 
    ```
-   notation plugin install --url https://github.com/Azure/trustedsigning-notation-plugin/releases/download/v0.2.0-alpha.1/notation-azure-trustedsigning_0.2.0-alpha.1_windows_amd64.zip --sha256sum e1b06e550154c64e228ce7945853ee4dd87caa4473dcba8e1489a34f7a603a9e
+   notation plugin install --url https://github.com/Azure/trustedsigning-notation-plugin/releases/download/v1.0.0-beta.1/notation-azure-trustedsigning_1.0.0-beta.1_windows_amd64.zip --sha256sum e1b06e550154c64e228ce7945853ee4dd87caa4473dcba8e1489a34f7a603a9e
    ```
 
    For macOS amd64:
 
    ```
-   notation plugin install --url https://github.com/Azure/trustedsigning-notation-plugin/releases/download/v0.2.0-alpha.1/notation-azure-trustedsigning_0.2.0-alpha.1_darwin_amd64.tar.gz --sha256sum f5708034681aabb0ec46da87ebe97546aea8dae92a38b43bd983e28c823f1c53
+   notation plugin install --url https://github.com/Azure/trustedsigning-notation-plugin/releases/download/v1.0.0-beta.1/notation-azure-trustedsigning_1.0.0-beta.1_darwin_amd64.tar.gz --sha256sum f5708034681aabb0ec46da87ebe97546aea8dae92a38b43bd983e28c823f1c53
    ```
 
    For macOS arm64:
 
    ```
-   notation plugin install --url https://github.com/Azure/trustedsigning-notation-plugin/releases/download/v0.2.0-alpha.1/notation-azure-trustedsigning_0.2.0-alpha.1_darwin_arm64.tar.gz --sha256sum aabbca40a4bcb69e100e0d9c5d188594ab20f1a3c30e9bc442c169deb95ab5ca
+   notation plugin install --url https://github.com/Azure/trustedsigning-notation-plugin/releases/download/v1.0.0-beta.1/notation-azure-trustedsigning_1.0.0-beta.1_darwin_arm64.tar.gz --sha256sum aabbca40a4bcb69e100e0d9c5d188594ab20f1a3c30e9bc442c169deb95ab5ca
    ```
     **Manual installation**:
 
    For Linux Bash:
 
    ```bash
-   version=0.2.0-alpha.1
+   version=1.0.0-beta.1
    arch=amd64
    install_path="${HOME}/.config/notation/plugins/azure-trustedsigning"
 
@@ -64,7 +64,7 @@ Please refer to [MS Learn Trusted Signing Documentation](https://learn.microsoft
    For macOS Zsh:
 
    ```zsh
-   version=0.2.0-alpha.1
+   version=1.0.0-beta.1
    arch=amd64
    install_path="${HOME}/Library/Application Support/notation/plugins/azure-trustedsigning"
 
@@ -85,7 +85,7 @@ Please refer to [MS Learn Trusted Signing Documentation](https://learn.microsoft
    For Windows Powershell:
 
    ```powershell
-   $version = "0.2.0-alpha.1"
+   $version = "1.0.0-beta.1"
    $arch = "amd64"
    $install_path = "${env:AppData}\notation\plugins\azure-trustedsigning"
 
@@ -106,7 +106,7 @@ Please refer to [MS Learn Trusted Signing Documentation](https://learn.microsoft
    Expand-Archive -Path ${zip_file} -DestinationPath ${install_path}
    ```
 
-   3. Run `notation plugin list` and confirm the `azure-trustedsigning` plugin is installed.
+3. Run `notation plugin list` and confirm the `azure-trustedsigning` plugin is installed.
 
 ## Getting started
 
