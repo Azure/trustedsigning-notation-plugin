@@ -18,25 +18,25 @@ Please refer to [MS Learn Trusted Signing Documentation](https://learn.microsoft
    For Linux amd64:
 
    ```
-   notation plugin install --url https://github.com/Azure/trustedsigning-notation-plugin/releases/download/v1.0.0-beta.1/notation-azure-trustedsigning_1.0.0-beta.1_linux_amd64.tar.gz --sha256sum ce52f63659f41115cebced1e479a1c6c920c388d7699e4bdd5426657e339f59e
+   notation plugin install --url https://github.com/Azure/trustedsigning-notation-plugin/releases/download/v1.0.0-beta.1/notation-azure-trustedsigning_1.0.0-beta.1_linux_amd64.tar.gz --sha256sum 538b497be0f0b4c6ced99eceb2be16f1c4b8e3d7c451357a52aeeca6751ccb44
    ```
 
    For Windows amd64:
 
    ```
-   notation plugin install --url https://github.com/Azure/trustedsigning-notation-plugin/releases/download/v1.0.0-beta.1/notation-azure-trustedsigning_1.0.0-beta.1_windows_amd64.zip --sha256sum e1b06e550154c64e228ce7945853ee4dd87caa4473dcba8e1489a34f7a603a9e
+   notation plugin install --url https://github.com/Azure/trustedsigning-notation-plugin/releases/download/v1.0.0-beta.1/notation-azure-trustedsigning_1.0.0-beta.1_windows_amd64.zip --sha256sum 778661034f98c455a86608b9a6426168fd81228b52112acdf75c367d5e463255
    ```
 
    For macOS amd64:
 
    ```
-   notation plugin install --url https://github.com/Azure/trustedsigning-notation-plugin/releases/download/v1.0.0-beta.1/notation-azure-trustedsigning_1.0.0-beta.1_darwin_amd64.tar.gz --sha256sum f5708034681aabb0ec46da87ebe97546aea8dae92a38b43bd983e28c823f1c53
+   notation plugin install --url https://github.com/Azure/trustedsigning-notation-plugin/releases/download/v1.0.0-beta.1/notation-azure-trustedsigning_1.0.0-beta.1_darwin_amd64.tar.gz --sha256sum b7ea8b4f20f27fd2a28efacb3ca1faf75dc6ef911a65bafdfa97d355b8ce1170
    ```
 
    For macOS arm64:
 
    ```
-   notation plugin install --url https://github.com/Azure/trustedsigning-notation-plugin/releases/download/v1.0.0-beta.1/notation-azure-trustedsigning_1.0.0-beta.1_darwin_arm64.tar.gz --sha256sum aabbca40a4bcb69e100e0d9c5d188594ab20f1a3c30e9bc442c169deb95ab5ca
+   notation plugin install --url https://github.com/Azure/trustedsigning-notation-plugin/releases/download/v1.0.0-beta.1/notation-azure-trustedsigning_1.0.0-beta.1_darwin_arm64.tar.gz --sha256sum 75d6af3ecea9d43dfbf5a79334dd44abaabf0f4187b47ef0c389063b3e6c2b9a
    ```
     **Manual installation**:
 
