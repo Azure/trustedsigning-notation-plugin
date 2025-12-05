@@ -42,7 +42,7 @@ jobs:
           path: ./bin/artifacts/notation-azure-trustedsigning_0.0.1_linux_amd64.tar.gz
           retention-days: 1
   test-linux-arm:
-    name: Unit Testing and Build on Linux ARM64
+    name: Unit Testing and Build on Linux arm64
     runs-on: ubuntu-24.04-arm
     timeout-minutes: 5
     permissions:
@@ -125,7 +125,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: windows-amd64-binary
-          path: ./bin/artifacts/notation-azure-trustedsigning_0.0.1_windows_2022_amd64.zip
+          path: ./bin/artifacts/notation-azure-trustedsigning_0.0.1_windows_amd64.zip
           retention-days: 1
   test-windows-2025:
     name: Unit Testing and Build on Windows (2025) x64
@@ -146,12 +146,6 @@ jobs:
         run: make test
       - name: Build Windows Binary
         run: python3 ./scripts/build.py v0.0.1 win-x64
-      - name: Upload Windows artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: windows-amd64-binary
-          path: ./bin/artifacts/notation-azure-trustedsigning_0.0.1_windows_2025_amd64.zip
-          retention-days: 1
   test-windows-arm:
     name: Unit Testing and Build on Windows arm64
     runs-on: windows-11-arm
