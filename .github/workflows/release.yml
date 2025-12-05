@@ -30,6 +30,9 @@ jobs:
           - runtime: win-x64
             build_args: ""
             os: windows-2025
+          - runtime: win-arm64
+            build_args: ""
+            os: windows-11-arm
     name: Build
     runs-on: ${{ matrix.config.os }}
     steps:

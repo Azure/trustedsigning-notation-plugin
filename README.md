@@ -33,6 +33,12 @@ Please refer to [MS Learn Trusted Signing Documentation](https://learn.microsoft
    notation plugin install --url https://github.com/Azure/trustedsigning-notation-plugin/releases/download/v1.0.0-beta.2/notation-azure-trustedsigning_1.0.0-beta.2_windows_amd64.zip --sha256sum f5afaf51ead8b9a9f799ed5d8979d017384557a252a9a9a2a5b0664d9e7db7f0
    ```
 
+   For Windows arm64:
+
+   ```
+   notation plugin install --url https://github.com/Azure/trustedsigning-notation-plugin/releases/download/v1.0.0-beta.2/notation-azure-trustedsigning_1.0.0-beta.2_windows_arm64.zip --sha256sum f5afaf51ead8b9a9f799ed5d8979d017384557a252a9a9a2a5b0664d9e7db7f0
+   ```
+
    For macOS amd64:
 
    ```
