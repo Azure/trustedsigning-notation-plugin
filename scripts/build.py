@@ -10,7 +10,7 @@ def main():
     parser.add_argument("version", help="The version tag, starts with v")
     parser.add_argument(
         "runtime",
-        help="The runtime environment, e.g. win-x64, linux-x64, osx-x64, linux-arm64, osx-arm64",
+        help="The runtime environment, e.g. win-x64, win-arm64, linux-x64, osx-x64, linux-arm64, osx-arm64",
     )
     parser.add_argument(
         "--enable-aot", action="store_true", help="Enable AOT compilation"

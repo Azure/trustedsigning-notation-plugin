@@ -42,7 +42,7 @@ jobs:
           path: ./bin/artifacts/notation-azure-trustedsigning_0.0.1_linux_amd64.tar.gz
           retention-days: 1
   test-linux-arm:
-    name: Unit Testing and Build on Linux ARM64
+    name: Unit Testing and Build on Linux arm64
     runs-on: ubuntu-24.04-arm
     timeout-minutes: 5
     permissions:
@@ -125,7 +125,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: windows-amd64-binary
-          path: ./bin/artifacts/notation-azure-trustedsigning_0.0.1_windows_2022_amd64.zip
+          path: ./bin/artifacts/notation-azure-trustedsigning_0.0.1_windows_amd64.zip
           retention-days: 1
   test-windows-2025:
     name: Unit Testing and Build on Windows (2025) x64
@@ -146,10 +146,29 @@ jobs:
         run: make test
       - name: Build Windows Binary
         run: python3 ./scripts/build.py v0.0.1 win-x64
+  test-windows-arm:
+    name: Unit Testing and Build on Windows arm64
+    runs-on: windows-11-arm
+    timeout-minutes: 5
+    permissions:
+      contents: read
+    steps:
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+      - name: Check out code into the project directory
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Run unit tests
+        run: make test
+      - name: Build Windows Binary
+        run: python3 ./scripts/build.py v0.0.1 win-arm64
       - name: Upload Windows artifact
         uses: actions/upload-artifact@v4
         with:
-          name: windows-amd64-binary
-          path: ./bin/artifacts/notation-azure-trustedsigning_0.0.1_windows_2025_amd64.zip
+          name: windows-arm64-binary
+          path: ./bin/artifacts/notation-azure-trustedsigning_0.0.1_windows_arm64.zip
           retention-days: 1
 # TODO: Find a day to do E2E test using a trusted signing account
